@@ -14,17 +14,39 @@
             <h1>Listakezelő</h1>
         </header>
         <div class="urlap">
-
+            <form>
+                <div class="mb-3 mt-3">
+                  <label for="nev" class="form-label">Nev:</label>
+                  <input type="text" class="form-control" id="nev" placeholder="Valaki vagyok" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="kor" class="form-label">Kor:</label>
+                  <input type="number" class="form-control" id="kor" min="0" max="120" name="kor">
+                </div>
+                <div class="form-check mb-3">
+                  <label class="form-check-label"> Férfi</label>
+                    <input class="form-check-input" type="radio" name="nem" value="ferfi">     
+                </div>
+                <div class="form-check mb-3">
+                    <label class="form-check-label"> Nő</label>
+                      <input class="form-check-input" type="radio" name="nem" value="no">     
+                  </div>
+                <button type="submit" class="btn btn-primary">Hozzáad</button>
+              </form>
 
         </div>
         <div class="szuro">
-
+            <h3>Szűrés név szerint:</h3>
+            <div class="mb-3 mt-3">
+                  <input class="text" class="from-control" id="sznev" name="sznev">     
+              </div>
 
         </div>
         <div class="adatok">
 
             
         </div>
+        
     </main>
     
 </body>
