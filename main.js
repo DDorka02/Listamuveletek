@@ -1,4 +1,5 @@
 import { EMBEREK } from "./adat.js";
+import { rendez } from "./adatKezelo.js";
 import { megjeleit,tablazatLetrehoz } from "./fuggvenyek.js";
 
 /*
@@ -10,6 +11,36 @@ import { megjeleit,tablazatLetrehoz } from "./fuggvenyek.js";
 6.torol(lista, index) - törli a indexedik sorát - minden sor melett lesz egy töröl ikon amire kattintva megkapjuk az adott sor indexét, és meghívodik a torol fuggveny
 */
 
-let txt = tablazatLetrehoz(EMBEREK)
-console.log(txt)
-megjeleit(txt)
+let rIrany = 1
+init(EMBEREK)
+szuresNevSzerint()
+
+function init(lista) {
+    let txt = tablazatLetrehoz(lista)
+    megjeleit(txt)
+    rendezesEsemeny()
+}
+
+//szorgalmi egyéb mező szűrése
+
+
+function szuresNevSzerint() {
+    const szuroELEM=$("#sznev")
+szuroELEM.on("keyup",function() {
+    let szoveg = szuroELEM.val()
+    init(szures(EMBEREK, szoveg))
+})
+}
+
+function rendezesEsemeny(){
+    const nevMezoELEM = $(".adatok table th").eq(0);
+    nevMezoELEM.on("click", function () {
+        const lista=rendez(EMBEREK,"nev",rIrany)
+        console.log(lista)
+        init()
+        rIrany*=(-1)
+    })
+
+}
+
+

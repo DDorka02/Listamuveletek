@@ -27,7 +27,7 @@ export const EMBEREK = [
     {
         nev:"Balázs",
         kor: 18,
-        nem:false
+        nem:true
     },
     {
         nev:"Janka",
